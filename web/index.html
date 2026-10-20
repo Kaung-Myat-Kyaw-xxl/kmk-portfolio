@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="KMK portfolio project.">
+
+  <!-- theme color for web -->
+  <meta name="theme-color" content="#0D1B2A" />
+  <style>
+    html, body {
+      background-color: #858585;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+
+  <!-- Load Lottie Web -->
+  <script src="https://unpkg.com/lottie-web@5.12.2/build/player/lottie.min.js"></script>
+
+  <!-- Optional: Load custom font (e.g., Manrope or Arial) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="kmk_portfolio">
+  <link rel="apple-touch-icon" href="icons/myfavicon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="myfavicon.png"/>
+
+  <title>kmk_portfolio</title>
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <!-- Custom Lottie loading screen -->
+  <div id="loading" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; text-align: center;">
+    <div id="lottie-container" style="width: 200px; height: 200px; margin: 0 auto;"></div>
+    <p style="color: #0D1B2A; font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 500; margin-top: 20px;">
+      Loading Portfolio...
+    </p>
+  </div>
+
+  <script>
+    // Load and play your Lottie animation
+    lottie.loadAnimation({
+      container: document.getElementById('lottie-container'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'assets/animations/lottie_loading.json' // 👈 Update to your Lottie JSON path
+    });
+  </script>
+
+  <!-- Load Flutter app -->
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
